@@ -1,24 +1,10 @@
-// const express = require('express');
-// const hbs = require('hbs');
-// const fs = require('fs');
-//
-// const port = process.env.PORT || 8080;
-//
-//
-//
-// app.listen(port,() =>{
-//     console.log(`Server is up on the port ${port}`);
-// });
-
-
-
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
 var app = express();
 
-hbs.registerPartials(__dirname + '/views/partials');
+hbs.registerPartials(dirname + '/views/partials');
 
 app.set('view engine', 'hbs');
 // app.use(express.static(dirname + '/public'));
@@ -41,7 +27,7 @@ app.use((request, response, next) => {
     //     }
     // });
     // next();
-    response.render('a.hbs')
+    response.render('maintenance.hbs')
 });
 
 app.get('/', (request, response) => {
