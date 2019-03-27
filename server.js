@@ -16,18 +16,18 @@ hbs.registerHelper('message', (text) => {
     return text.toUpperCase();
 });
 
-app.use((request, response, next) => {
-    // var time = new Date().toString();
-    // // console.log(${time}: ${request.method} ${request.url});
-    // var log = ${time}: ${request.method} ${request.url};
-    // fs.appendFile('server.log', log + '\n', (error) => {
-    //     if (error) {
-    //         console.log('Unable to log message');
-    //     }
-    // });
-    // next();
-    response.render('maintenance.hbs')
-});
+// app.use((request, response, next) => {
+//     // var time = new Date().toString();
+//     // // console.log(${time}: ${request.method} ${request.url});
+//     // var log = ${time}: ${request.method} ${request.url};
+//     // fs.appendFile('server.log', log + '\n', (error) => {
+//     //     if (error) {
+//     //         console.log('Unable to log message');
+//     //     }
+//     // });
+//     // next();
+//     response.render('maintenance.hbs')
+// });
 
 app.get('/', (request, response) => {
     // response.send('<h1>Hello Express!</h1>');
