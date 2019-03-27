@@ -1,17 +1,15 @@
-
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
 const port = process.env.PORT || 8080;
 
-
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
 
 app.set('view engine', 'hbs');
-// app.use(express.static(dirname + '/public'));
+// app.use(express.static(__dirname + '/public'));
 
 hbs.registerHelper('getCurrentYear', () => {
     return new Date().getFullYear();
@@ -21,18 +19,18 @@ hbs.registerHelper('message', (text) => {
     return text.toUpperCase();
 });
 
-app.use((request, response, next) => {
-    // var time = new Date().toString();
-    // // console.log(${time}: ${request.method} ${request.url});
-    // var log = ${time}: ${request.method} ${request.url};
-    // fs.appendFile('server.log', log + '\n', (error) => {
-    //     if (error) {
-    //         console.log('Unable to log message');
-    //     }
-    // });
-    // next();
-    response.render('a.hbs')
-});
+// app.use((request, response, next) => {
+//     // var time = new Date().toString();
+//     // // console.log(`${time}: ${request.method} ${request.url}`);
+//     // var log = `${time}: ${request.method} ${request.url}`;
+//     // fs.appendFile('server.log', log + '\n', (error) => {
+//     //     if (error) {
+//     //         console.log('Unable to log message');
+//     //     }
+//     // });
+//     // next();
+//     response.render('maintenance.hbs')
+// });
 
 app.get('/', (request, response) => {
     // response.send('<h1>Hello Express!</h1>');
@@ -60,6 +58,10 @@ app.get('/404', (request, response) => {
     })
 });
 
-app.listen(8080, () => {
-    console.log(`Server is up on the port ${port}`);
+// app.listen(8080, () => {
+//     console.log('Server is up on the port 8080');
+// });
+
+app.listen(port, () => {
+    console.log('Server is up on the port 8080');
 });
