@@ -4,7 +4,7 @@ const fs = require('fs');
 
 var app = express();
 
-hbs.registerPartials(dirname + '/views/partials');
+hbs.registerPartials(__dirname + '/views/partials');
 
 app.set('view engine', 'hbs');
 // app.use(express.static(dirname + '/public'));
